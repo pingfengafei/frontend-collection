@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {browserHistory} from 'react-router';
+import {Link, browserHistory} from 'react-router';
 
 class TestRef extends React.Component {
 	constructor() {
@@ -32,7 +32,8 @@ class TestRef extends React.Component {
 				<MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
 					<TextField id='1111' ref="textFieldInput" onChange={this.handleChange}/>
 				</MuiThemeProvider>
-				<div onClick={this.handleClick}>link to test input page</div>
+				<div onClick={this.handleClick}>link to test input page by browserHistory</div>
+				<div><Link to="/input">link to test input page by Link</Link></div>
 			</div>
 		);
 	}

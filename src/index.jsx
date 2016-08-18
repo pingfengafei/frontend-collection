@@ -7,6 +7,8 @@ import TestRef from './testRef';
 import TestInput from './TestInput';
 import {Router, Route, IndexRoute, Link, browserHistory} from 'react-router';
 
+import TestRedux from './ToList/index';
+
 import './index.less';
 
 class App extends React.Component {
@@ -21,6 +23,7 @@ class App extends React.Component {
 	}
 
 	render() {
+		TestRedux();
 		return (
 			<div className="wrap">
 				<div className="top-nav">我是测试首页,假装自己是头部导航栏</div>
