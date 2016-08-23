@@ -10,7 +10,7 @@
  * */
 
 import React from 'react';
-import _ from 'lodash';
+//import _ from 'lodash';
 
 class TestInput extends React.Component {
 	constructor() {

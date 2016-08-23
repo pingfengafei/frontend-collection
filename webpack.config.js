@@ -43,6 +43,13 @@ module.exports = {
 		extensions: ['', '.js', '.jsx']
 	},
 	module: {
+		preLoaders: [
+			{
+				test: /\.js$/,
+				loader: "eslint-loader",
+				exclude: /node_modules/
+			}
+		],
 		loaders
 	},
 	devServer: {
@@ -59,7 +66,8 @@ module.exports = {
 		host: HOST
 	},
 	plugins: [
-		new webpack.NoErrorsPlugin(),
+		//只要有error,就會阻止程序運行,即使是eslint的error也一樣
+		//new webpack.NoErrorsPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
 			template: './src/template.html'

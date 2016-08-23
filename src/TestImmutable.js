@@ -5,11 +5,10 @@ import React from 'react';
 import Immutable from 'immutable';
 import './index.less';
 
-let a = Immutable.fromJS({a: 1, b: 2, c: {name: 'hello', value: 'world'}});
-let b = a;
-let user = Immutable.Map({name: '1', age: '2', info: {gender: 'male', height: '3'}});
+//let a = Immutable.fromJS({a: 1, b: 2, c: {name: 'hello', value: 'world'}});
+//let user = Immutable.Map({name: '1', age: '2', info: {gender: 'male', height: '3'}});
 
-let userCopy = user;
+//let userCopy = user;
 
 class TestImmutable extends React.Component {
 	constructor(props) {

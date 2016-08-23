@@ -23,7 +23,7 @@ class App extends React.Component {
 	}
 
 	render() {
-		TestRedux();
+		//TestRedux();
 		return (
 			<div className="wrap">
 				<div className="top-nav">我是测试首页,假装自己是头部导航栏</div>
