@@ -7,9 +7,14 @@ import TestRef from './testRef';
 import TestInput from './TestInput';
 import {Router, Route, IndexRoute, Link, browserHistory} from 'react-router';
 
-import TestRedux from './ToList/index';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+
+import TodoApp from './ToList/components/App';
+import TodoAppReducer from './ToList/Reducers';
 
 import './index.less';
+
 
 class App extends React.Component {
 	constructor(props) {
@@ -47,12 +52,17 @@ class MainPage extends React.Component {
 	}
 }
 
+let rootStore = createStore(TodoAppReducer);
+
 render(
-	(<Router history={browserHistory}>
-			<Route path="/" component={App}>
-				<IndexRoute component={MainPage}/>
-				<Route path="ref" component={TestRef}/>
-				<Route path="input" component={TestInput}/>
-			</Route>
-		</Router>
+	(<Provider store={rootStore}>
+			<Router history={browserHistory}>
+				<Route path="/" component={App}>
+					<IndexRoute component={MainPage}/>
+					<Route path="ref" component={TestRef}/>
+					<Route path="input" component={TestInput}/>
+					<Route path="todolist" component={TodoApp}/>
+				</Route>
+			</Router>
+		</Provider>
 	), document.querySelector("#app"));
