@@ -1,8 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import  {render}  from 'react-dom';
-import Test from './Test';
-import TestImmutable from './TestImmutable';
 import TestRef from './testRef';
 import TestInput from './TestInput';
 import {Router, Route, IndexRoute, Link, browserHistory} from 'react-router';
@@ -10,8 +8,10 @@ import {Router, Route, IndexRoute, Link, browserHistory} from 'react-router';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 
-import TodoApp from './ToList/components/App';
-import TodoAppReducer from './ToList/Reducers';
+//import TodoApp from './ToList/components/App';
+//import TodoAppReducer from './ToList/Reducers';
+
+import Foundation from './foundation/foundation';
 
 import './index.less';
 
@@ -52,17 +52,15 @@ class MainPage extends React.Component {
 	}
 }
 
-let rootStore = createStore(TodoAppReducer);
+//let rootStore = createStore();
 
 render(
-	(<Provider store={rootStore}>
 			<Router history={browserHistory}>
 				<Route path="/" component={App}>
 					<IndexRoute component={MainPage}/>
 					<Route path="ref" component={TestRef}/>
 					<Route path="input" component={TestInput}/>
-					<Route path="todolist" component={TodoApp}/>
+					{/*<Route path="todolist" component={TodoApp}/>*/}
+					<Route path="foundation" component={Foundation}/>
 				</Route>
-			</Router>
-		</Provider>
-	), document.querySelector("#app"));
+			</Router>, document.querySelector("#app"));

@@ -29,7 +29,6 @@ class Test extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.name); //这里会渲染
 		return null;
 	}
 }
