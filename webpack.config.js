@@ -7,6 +7,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "8888";
 
+console.log(process.env);
+
 // global css
 loaders.push({
 	test: /[\/\\](node_modules|global)[\/\\].*\.css$/,
