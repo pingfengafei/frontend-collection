@@ -4,6 +4,20 @@ var path = require('path');
 var loaders = require('./webpack.loaders');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+/**
+ * 在better-npm-run里配置
+ * "betterScripts":{
+ * 		"start" :{
+ * 			"command" : "...."
+ * 			"env":{
+ * 				"HOST":"",
+ * 				"PORT":""
+ * 			}
+ * 		}
+ *
+ * progcess是node的全局对象
+ * 这样就可以时间参数配置host和port
+ * **/
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "8888";
 
