@@ -35,11 +35,7 @@ render(
 	<Router history={browserHistory}>
 		<Route path="/" component={AppContainer}>
 			<IndexRoute component={IndexRoutePageContainer}/>
-			<Route path="css" component={CssContainer}>
-				<IndexRoute component={Transaction}/>
-				<Route path='transition' component={Transaction}/>
-				<Route path='animation' component={Animation}/>
-			</Route>
+			<Route path="css" component={CssContainer}/>
 		</Route>
 	</Router>, document.querySelector("#app"));
 
