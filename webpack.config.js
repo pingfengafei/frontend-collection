@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var path = require('path');
 var loaders = require('./webpack.loaders');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+var autoprefixer = require('autoprefixer');
 /**
  * 在better-npm-run里配置
  * "betterScripts":{
@@ -40,8 +40,8 @@ loaders.push({
 	]
 });
 loaders.push({
-	test: /\.less$/,
-	loader: "style!css!less"
+	test: /\.(le|c)ss$/,
+	loader: "style!css!postcss!less!"
 });
 
 module.exports = {
@@ -69,6 +69,7 @@ module.exports = {
 		],
 		loaders
 	},
+	postcss: [autoprefixer({browsers: ['last 2 versions']})],
 	devServer: {
 		contentBase: "./public",
 		// do not print bundle build stats
