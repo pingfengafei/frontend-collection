@@ -14,31 +14,12 @@ var autoprefixer = require('autoprefixer');
  * 				"PORT":""
  * 			}
  * 		}
- *
  * progcess是node的全局对象
  * 这样就可以时间参数配置host和port
  * **/
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "8888";
 
-console.log(process.env);
-
-// global css
-loaders.push({
-	test: /[\/\\](node_modules|global)[\/\\].*\.css$/,
-	loaders: [
-		'style?sourceMap',
-		'css'
-	]
-});
-// local css modules
-loaders.push({
-	test: /[\/\\]src[\/\\].*\.css$/,
-	loaders: [
-		'style?sourceMap',
-		'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
-	]
-});
 loaders.push({
 	test: /\.(le|c)ss$/,
 	loader: "style!css!postcss!less!"
